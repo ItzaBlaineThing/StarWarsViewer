@@ -5,7 +5,7 @@ export const Search = () => {
     return (
         <SearchWrapper>
             <SearchLabel>Search</SearchLabel>
-            <SearchBox placeholder="Receiver, Payer ID, Transaction Type, Mode, # of Edits" />
+            <SearchBox placeholder="Name, Gender, Birth Year, Eye Color, Hair Color" />
             <SearchButton>Search</SearchButton>
         </SearchWrapper>
     )
