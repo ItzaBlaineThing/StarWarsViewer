@@ -7,7 +7,7 @@ export const SearchWrapper = styled.div`
 `;
 
 export const SearchLabel = styled.h3`
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
 `;
 

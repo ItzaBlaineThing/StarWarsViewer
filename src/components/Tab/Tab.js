@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { TabWrapper } from './Tab.styled';
+import { LivePreview } from '../LivePreview/LivePreview';
+import { Results } from '../Results/Results';
 import { Search } from '../Search/Search';
+import { Divider, TabWrapper } from './Tab.styled';
+
 import { useInfiniteQuery } from 'react-query';
 
 const fetchData = async ({ queryKey, pageParam = 1 }) => {
@@ -31,7 +34,7 @@ export const Tab = ({ activeTab }) => {
     return (
         <>
             <Search />
-            
+
             {status === 'loading' && (
                 <div>Loading data...</div>
             )}
@@ -42,9 +45,9 @@ export const Tab = ({ activeTab }) => {
 
             {status === 'success' && (
                 <TabWrapper>
-                    <div>
-                        <h1>Tab Content</h1>
-                    </div>
+                    <Results activeTab={activeTab} hasNextPage={hasNextPage} fetchNextPage={fetchNextPage} pages={data.pages} updateResult={updateResult} />
+                    <Divider />
+                    <LivePreview result={result} />
                 </TabWrapper>
             )}
         </>
