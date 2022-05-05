@@ -84,7 +84,9 @@ export const Results = ({ activeTab, hasNextPage, fetchNextPage, pages, updateRe
 
             {/* Item the observer is watching to trigger next load */}
             {hasNextPage ?
-                <div className="loader-ref" ref={loader} />
+                <div className="loader-ref" ref={loader}>
+                    Loading data...
+                </div>
             :
                 <div>
                     No more data to fetch
