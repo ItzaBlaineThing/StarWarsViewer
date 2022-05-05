@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TabWrapper } from './Tab.styled';
-
+import { Search } from '../Search/Search';
 import { useInfiniteQuery } from 'react-query';
 
 const fetchData = async ({ queryKey, pageParam = 1 }) => {
@@ -30,7 +30,8 @@ export const Tab = ({ activeTab }) => {
 
     return (
         <>
-
+            <Search />
+            
             {status === 'loading' && (
                 <div>Loading data...</div>
             )}
