@@ -8,7 +8,7 @@ import { useInfiniteQuery } from 'react-query';
 
 const fetchData = async ({ queryKey, pageParam = 1 }) => {
     const [key] = queryKey;
-    const res = await fetch(`http://swapi.dev/api/${key}/?page=${pageParam}`);
+    const res = await fetch(`https://swapi.dev/api/${key}/?page=${pageParam}`);
     const results = await res.json();
     // Return the results json and the next page number if next page exists or undefined if not which will stop the fetching
     return { data: results, nextPage: results.next !== null ? pageParam + 1 : undefined };
